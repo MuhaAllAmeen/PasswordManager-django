@@ -1,0 +1,60 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}" />
+    </head>
+    <body>
+        <ul class="nav">
+            {% if user.username %}
+            <li>
+                Welcome {{user.username}}
+            </li>
+            <li>
+                <a href="logout">Logout</a>
+            </li>
+            {% else %}
+            <li>
+                <a href="login">
+                Login
+                </a>
+            </li>
+            <li>
+                <a href="signup">
+                SignUp
+                </a>
+            </li>
+            {% endif %}
+        </ul>
+        <div class="heading-btns-container">
+            <div class="heading-generator-container">
+                <h1 class="heading">
+                    Password <br> Manager
+                </h1>
+                <input type="text" id="password-box" name="password-box" disabled> 
+                <button id="generate-btn">Generate</button> <br>
+                <input type="range" min="6" max="12" value="6" id="pass-length" name="pass-length">
+                <label for="pass-length">Password Length = </label> <span id="slider-output"></span><br>
+                <input type="checkbox" name="numbers" value="Numbers" id="numbers-checkbox">
+                <label for="numbers"> Numbers</label><br>
+                <input type="checkbox" id="special-characters-checkbox" name="special-characters" value="special-characters">
+                <label for="special-characters"> Special Characters</label><br>
+
+            </div>
+            
+            <div class="vault-add-buttons-container">
+                <button class="vault-add-btn">
+                    <a href="vault">Vault</a>
+                </button>
+                <button class="vault-add-btn">
+                    <a href="add">Add</a>
+                </button>
+            </div>
+        </div>
+
+        <script type="module" src="{% static 'password-generator.js' %}"></script>
+    </body>
+</html>
+
+    

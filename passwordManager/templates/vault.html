@@ -1,0 +1,92 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{% static 'vault.css' %}" />
+    </head>
+    <body>
+        <div id="navbar-open">
+            <button id="navbar-open-btn">&#9776;</button>
+        </div>
+        <div class="sidebar">
+            <form id="search-form" action="" method="post">
+                {% csrf_token %}
+                <input id="search-input" name="search" type="text" placeholder="Search Website"> 
+                <input type="submit" value="Search" id="search-btn">
+            </form>
+            
+            <a href="add" class="sidebar-link">Add</a>
+            <a href="vault" class="sidebar-link">Vault</a>
+            <a href="/" class="sidebar-link">Home</a>
+        </div>
+            <h1>Vault</h1>
+            <div class="main-container">
+            {% for website,credentials in website_details.items %}
+            <div class="credentials-heading-box">
+                <h2>{{website}}</h2>
+                <div class="btn-container">
+                    <button id="show-credentials-btn" onclick='showCredentials("{{forloop.counter0}}")'>Show All Saved Credentials</button>
+                </div>
+                <div class="main-credentials-box"> 
+                {% for credential in credentials %}
+                    <div class="credentials-box">
+                        <p>Email/Username: {{credential.email}}</p>
+                        <button id="pwd-btn" onclick='showPassword("{{credential.password}}","{{forloop.counter0}}","{{forloop.parentloop.counter0}}")'>Password: </button>
+                        <span id="password">Click to Reveal</span>
+                        <hr>
+                    </div>
+                {% endfor %}
+                </div>   
+            </div>
+            {% endfor %}
+        </div> 
+        <script>
+            const password = document.querySelectorAll('#password')
+            const credentials_box = document.querySelectorAll('.main-credentials-box')
+            const navbar_btn = document.getElementById('navbar-open-btn')
+
+            navbar_btn.addEventListener('click',()=>{
+                const main_container = document.querySelector(".main-container")
+                const sidebar = document.querySelector(".sidebar")
+                let style= sidebar.currentStyle ? sidebar.currentStyle['display'] : window.getComputedStyle ? window.getComputedStyle(sidebar, null).getPropertyValue('display') : null;
+                if (style == 'none'){
+                    main_container.style.marginLeft = "15%";
+                    sidebar.style.width = "15%";
+                    sidebar.style.display = "flex";
+                    navbar_btn.style.position = "fixed"
+                }else{
+                    main_container.style.marginLeft = "0%";
+                    sidebar.style.width = "0%";
+                    sidebar.style.display = 'none'
+                    navbar_btn.style.position = "absolute"
+
+                }
+                
+            })
+            function showCredentials(index){
+                let style= credentials_box[index].currentStyle ? credentials_box[index].currentStyle['display'] : window.getComputedStyle ? window.getComputedStyle(credentials_box[index], null).getPropertyValue('display') : null;
+                if (style == 'none'){
+                    credentials_box[index].style.display = 'block'
+                }else{
+                    credentials_box[index].style.display = 'none'
+                }
+            } 
+            function showPassword(passwordText,index,parentIndex){
+                let countOfP = 0
+                for (let i=0; i<parentIndex;i++){
+                    countOfP += credentials_box[i].getElementsByTagName('p').length
+                }
+                index = Number(index)+countOfP
+                if(password[index].innerText == 'Click to Reveal'){
+                    password[index].innerText = passwordText
+                }else{
+                    password[index].innerText = 'Click to Reveal'
+                }
+            }
+        </script>           
+    </body>
+</html>
+
+    
+

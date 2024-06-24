@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{% static 'login-signup.css' %}" />
+    </head>
+    <body>
+        <h1>
+            Signup.
+        </h1>
+        <div>
+            <style>
+                h5{
+                    color: blue;
+                }
+            </style>
+    
+            {% for message in messages %}
+            <h5>{{message}}</h5>
+            {% endfor %}
+        </div>
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="login-container">
+                <input class="login-input" required type="text" name="username" placeholder="Username">
+                <input class="login-input" required type="email" name="email" placeholder="Email">
+                <input class="login-input" required type="password" name="password" placeholder="Password">
+                <input class="login-input" required type="password" name="password2" placeholder="Re-enter Password">
+                <input class="login-input" type="submit" name="submit" id="submit" value="SignUp">
+            </div>
+        </form>
+    </body>
+</html>
+
+    

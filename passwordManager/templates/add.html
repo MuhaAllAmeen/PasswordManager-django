@@ -1,0 +1,68 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{% static 'login-signup.css' %}" />
+    </head>
+    <body>
+        <div id="navbar-open">
+            <button id="navbar-open-btn">&#9776;</button>
+        </div>
+        <div class="sidebar">
+            <form id="search-form" action="" method="post">
+                {% csrf_token %}
+                <input id="search-input" name="search" type="text" placeholder="Search Website"> 
+                <input type="submit" value="Search" id="search-btn">
+            </form>
+            
+            <a href="add" class="sidebar-link">Add</a>
+            <a href="vault" class="sidebar-link">Vault</a>
+            <a href="/" class="sidebar-link">Home</a>
+        </div>
+        <h1>
+            Add Credentials.
+        </h1>
+        <div>
+            <style>
+                h5{
+                    color: blue;
+                }
+            </style>
+    
+            {% for message in messages %}
+            <h5>{{message}}</h5>
+            {% endfor %}
+        </div>
+        
+        <form class="login-form" action="" method="post">
+            {% csrf_token %}
+            <div class="login-container">
+                <input class="login-input" required type="website" name="website" placeholder="Website">
+                <input class="login-input" required type="text" name="username" placeholder="Username">
+                <input class="login-input" required type="password" name="password" placeholder="Password">
+                <input class="login-input" required type="submit" name="submit" id="submit" value="Add">
+            </div>
+        </form>
+        <script>
+            const navbar_btn = document.getElementById('navbar-open-btn')
+            navbar_btn.addEventListener('click',()=>{
+                const sidebar = document.querySelector(".sidebar")
+                let style= sidebar.currentStyle ? sidebar.currentStyle['display'] : window.getComputedStyle ? window.getComputedStyle(sidebar, null).getPropertyValue('display') : null;
+                if (style == 'none'){
+                    sidebar.style.width = "15%";
+                    sidebar.style.display = "flex";
+                    navbar_btn.style.position = "fixed"
+                }else{
+                    sidebar.style.width = "0%";
+                    sidebar.style.display = 'none'
+                    navbar_btn.style.position = "absolute"
+
+                }
+                
+            })
+        </script>
+    </body>
+</html>
+
+    

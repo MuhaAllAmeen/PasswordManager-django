@@ -1,0 +1,82 @@
+body{
+    background-color: rgb(243, 99, 99);
+}
+
+h1{
+    color: white;
+    font-size: 100px;
+    text-align: center;
+}
+
+.login-container{
+    display: flex;
+    flex-direction: column;
+    align-content: space-evenly;
+    align-items: center;
+    gap: 2em;
+}
+
+.login-input{
+    width: 40vb;
+    height: 5vh;
+    border-radius: 10%;
+}
+
+.sidebar{
+    padding-top: 80px;
+    background-color: rgb(219, 219, 219);;
+    display: none;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* width: 15%; */
+    height: 100%;
+}
+
+.sidebar-link{
+    margin-top: 20px;
+    text-decoration: none;
+    color: rgb(243, 99, 99);;
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+#search-input{
+    width: 200px;
+    height: 40px;
+    border-radius: 20px;
+}
+
+#search-btn{
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100px;
+    cursor: pointer;
+    color: rgb(243, 99, 99);
+    font-weight: bolder;
+}
+
+#navbar-open{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+}
+
+#navbar-open-btn{
+    cursor: pointer;
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 40px;
+}
+
+#search-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

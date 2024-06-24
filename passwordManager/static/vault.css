@@ -1,0 +1,116 @@
+body{
+    background-color: rgb(243, 99, 99);
+}
+
+h1{
+    color: white;
+    font-size: 100px;
+    text-align: center;
+}
+
+.main-container{
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 2em;
+    /* margin-left: 15%; */
+}
+
+.credentials-heading-box{
+    /* background-color: aliceblue; */
+    padding: 10px;
+    border:3px solid white;
+    border-radius: 20px;
+    width: 300px;
+    padding-bottom: 30px;
+    height: fit-content;
+}
+
+
+.main-credentials-box{
+    display: none;
+}
+
+h2{
+    text-align: center;
+}
+.btn-container{
+    display: flex;
+    justify-content: center;
+}
+#show-credentials-btn{
+    padding: 10px;
+    border-radius: 20px;
+    background: transparent;
+    cursor: pointer;
+}
+
+.sidebar{
+    padding-top: 80px;
+    background-color: rgb(219, 219, 219);;
+    display: none;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* width: 15%; */
+    height: 100%;
+}
+
+.sidebar-link{
+    margin-top: 20px;
+    text-decoration: none;
+    color: rgb(243, 99, 99);;
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+#search-input{
+    width: 200px;
+    height: 40px;
+    border-radius: 20px;
+}
+
+#search-btn{
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100px;
+    cursor: pointer;
+    color: rgb(243, 99, 99);
+    font-weight: bolder;
+}
+
+#navbar-open{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+}
+
+#navbar-open-btn{
+    cursor: pointer;
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 40px;
+}
+
+#search-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#pwd-btn{
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    color: white;
+    border-radius: 5px;
+    /* text-shadow: 2px 2px #eeeeee; */
+    box-shadow: 2px 2px #ffffff;
+}

@@ -1,0 +1,91 @@
+.heading{
+    color: white;    
+    position: relative;
+    font-size: 90px;
+    text-align: center;
+}
+
+.heading-btns-container{
+    margin-top: 10%;
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: row;
+    padding-left: 10%;
+    padding-right: 18%;    
+    justify-content: space-between;
+}
+.vault-add-buttons-container{
+    margin-top: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    gap: 2em;
+    /* background-color: aqua; */
+}
+
+.vault-add-btn{
+    width: 150px;
+    height: 150px;
+    border-radius: 10%;
+    background-color: white;
+    border-color: red;
+    font-size: 25px;
+}
+.vault-add-btn:hover{
+    border-radius: 50%;
+    color: red;
+    cursor:pointer;  
+
+}
+body { 
+    background: url("https://i.pinimg.com/originals/50/05/db/5005dbccb59bc9929274c043b848eb84.gif") no-repeat center center ; 
+    /* background-color: rgba(55, 90, 107, 0.923); */
+    background-color: rgb(243, 99, 99);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 60% 100%;
+    overflow: hidden;
+  }
+
+  .nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 1em;
+    list-style-type: none;
+    font-size: 30px;
+    color: white;
+  margin: 0;
+  padding: 0;
+  }
+
+  a{
+    text-decoration: none;
+    color: inherit;
+  }
+  a:hover {
+    color: inherit;
+    /* color:whitesmoke;  */
+    text-decoration:none; 
+    cursor:pointer;  
+}
+
+#password-box{
+    color: white;
+    background-color: transparent;
+    height: 30px;
+    border-color: white;
+    border-radius: 10%;
+    letter-spacing: 2px;
+}
+#generate-btn{
+    border-radius: 10%;
+    height: 30px;
+    width: 100px;
+    background-color: transparent;
+}
+label{
+    color: white;
+    font-size: 20px;
+}
