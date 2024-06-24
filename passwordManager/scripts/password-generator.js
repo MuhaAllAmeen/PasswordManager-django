@@ -18,12 +18,7 @@ generate_btn.addEventListener('click',()=>{
 
 })
 
-const Allowed = {
-    Uppers: "QWERTYUIOPASDFGHJKLZXCVBNM",
-    Lowers: "qwertyuiopasdfghjklzxcvbnm",
-    Numbers: "1234567890",
-    Symbols: "!@#$%^&*"
-}
+
 
 const getRandomInt = (max) => {
     const array = new Uint32Array(1);
@@ -34,14 +29,20 @@ const getRandomInt = (max) => {
 const getRandomCharFromString = (str) => str.charAt(getRandomInt(str.length));
 const generatePassword = (length = 8, numbers, special_characters) => {
     let pwd = "";
+    const Allowed = {
+        Uppers: "QWERTYUIOPASDFGHJKLZXCVBNM",
+        Lowers: "qwertyuiopasdfghjklzxcvbnm",
+    }
     pwd += getRandomCharFromString(Allowed.Uppers);  // pwd will have at least one upper
     pwd += getRandomCharFromString(Allowed.Lowers);
     console.log('hello')
     console.log(numbers,special_characters)
     if (numbers){
+        Allowed.Numbers = '1234567890'
         pwd += getRandomCharFromString(Allowed.Numbers);  // pwd will have at least one number
     }  // pwd will have at least one lower
     if(special_characters){
+        Allowed.Symbols = "!@#$%^&*"
         pwd += getRandomCharFromString(Allowed.Symbols); // pwd will have at least one symbol
     }
     for (let i = pwd.length; i < length; i++)
