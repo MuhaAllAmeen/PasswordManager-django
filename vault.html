@@ -1,0 +1,28 @@
+<link href="popup.css" rel="stylesheet" type="text/css" />
+<script type="module" src="vault.js"></script>
+<div class="main-vault-container">
+    <a href="http://localhost:8000/vault" target="_blank" >
+        <button id="main-vault-btn">
+            <img src="assets/go.png" alt="go-to-vault" width="30px" height="30px">
+            Go to Vault
+        </button>
+    </a>
+    <div class="search-container">
+        <form action="http://localhost:8000/vault" method="post" id="search-form">
+            <input type="text" id="search" placeholder="Search for the Website">
+            <input type="submit" value="Search" id="search-btn">
+        </form>
+    </div>
+    <div class="results-container">
+
+    </div>
+    <div class="vault-generate-container">
+        <a href=""><button id="vault-btn"> 
+            Vault
+          </button></a>
+          <a href="popup.html"><button id="generator-btn"> 
+            Generator
+          </button></a>
+      </div>
+</div>
+

@@ -1,0 +1,101 @@
+body{
+  background-color: rgb(243, 99, 99);
+  width: 250px;
+}
+
+h1,h3{
+  color: white;
+}
+
+.generator-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 300px;
+}
+
+#generate-btn{
+  margin-top: 10px;
+  border-radius: 4px;
+  border-color: white;
+  margin-bottom: 20px;
+}
+
+.vault-generate-container{
+  background-color: white;
+  position:fixed;
+  width: 100%;
+  height: 50px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+}
+.main-vault-container{
+  height: 350px;
+}
+
+.search-container{
+  margin-top: 60px;
+}
+
+#main-vault-btn{
+  width: 100%;
+  position: fixed;
+  background-color: white;
+  font-weight: bolder;
+  left: 0;
+  right: 0;
+  top: 0;
+  font-size: 25px;
+  height: 50px;
+}
+
+#vault-btn,#generator-btn{
+  height: 100%;
+  width: 100%;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 7px solid red;
+  border-width: 80%;
+  background-color: white;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: bolder;
+  color: black;
+  cursor: pointer;
+}
+
+a{
+  
+  cursor: pointer;
+height: 100%;
+  width: 48%;
+}
+
+h2{
+  text-align: center;
+}
+
+.credentials-container{
+  border: 2px solid white;
+  border-radius: 2px;
+  margin-bottom: 5px;
+  padding: 10px;
+}
+
+#search{
+  background-color: white;
+  border-radius: 10px;
+  height: 30px;
+  width: 70%;
+}
+
+#search-btn{
+  padding: 5px;
+  background-color: white;
+  font-weight: bolder;
+  border-radius: 5px;
+}

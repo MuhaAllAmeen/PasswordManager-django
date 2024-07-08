@@ -1,0 +1,25 @@
+<link href="popup.css" rel="stylesheet" type="text/css" />
+<script type="module" src="popup.js"></script>
+
+<div class="main-container">
+  <h1>Password Manager</h1>
+  <h3>Generate Your Password</h3>
+  <div class="generator-container">
+    <input type="text" readonly id="password-generator" name="password-generator">
+    <button id="generate-btn">Generate</button>
+    <input type="range" min="6" max="12" value="6" id="pass-length" name="pass-length">
+    <label for="pass-length">Password Length = </label> <span id="slider-output"></span><br>
+    <input type="checkbox" name="numbers" value="Numbers" id="numbers-checkbox">
+    <label for="numbers"> Numbers</label><br>
+    <input type="checkbox" id="special-characters-checkbox" name="special-characters" value="special-characters">
+    <label for="special-characters"> Special Characters</label><br>
+  </div>
+    <div class="vault-generate-container">
+      <a href="vault.html"><button id="vault-btn"> 
+        Vault
+      </button></a>
+      <a href=""><button id="generator-btn"> 
+        Generator
+      </button></a>
+    </div>
+</div>

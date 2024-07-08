@@ -1,0 +1,43 @@
+{
+  "name": "Password Manager",
+  "version": "0.1.0",
+  "description": "Store your passwords",
+  "permissions": ["storage", "activeTab","tabs","cookies","http://localhost:8000/*","*://*.facebook.com","*://*.facebook.*/*"],
+  "host_permissions": ["http://localhost:8000/*","<all_urls>"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://localhost:8000/*","<all_urls>"],
+      "js": ["dist/bundle.js"]
+    }
+  ],
+  "minimum_chrome_version": "92",
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "assets/bookmark.png",
+        "assets/play.png",
+        "assets/delete.png",
+        "assets/save.png",
+        "dist/utils.bundle.js"
+      ],
+      "matches": ["http://localhost:8000/*","<all_urls>"]
+    }
+  ],
+"content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self';"
+  },
+  "action": {
+    "default_icon": {
+      "16": "assets/ext-icon.png",
+      "24": "assets/ext-icon.png",
+      "32": "assets/ext-icon.png"
+    },
+    "default_title": "Password Manager",
+    "default_popup": "popup.html"
+  },
+  "manifest_version": 3
+}
