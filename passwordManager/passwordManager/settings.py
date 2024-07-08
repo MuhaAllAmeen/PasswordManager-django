@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-oi4du2na+$sg!o3w!ri^qxrr48evpj&ewfsq*z4*p)z!1k=ble
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -40,19 +40,35 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'password_manager_app'
+    'corsheaders',
+    'password_manager_app',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',    
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_ALL_ORIGINS = True
 
+CSRF_COOKIE_SAMESITE = 'None'
+# SESSION_COOKIE_SAMESITE = 'None'
+CSRF_COOKIE_SECURE = True
+CSRF_COOKIE_HTTPONLY = False
+CSRF_TRUSTED_ORIGINS = ["*"]
+CSRF_ALLOWED_ORIGINS = ["*"]
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+# CSRF_COOKIE_DOMAIN = "facebook.com"
 ROOT_URLCONF = 'passwordManager.urls'
 
 TEMPLATES = [
